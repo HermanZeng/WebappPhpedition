@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>bookstore</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('button').filter('.btn-primary').click(function(){
+                //$('#myTable tr').each(function () {
+                var tr = $(this).parent().parent();
+
+                alert(tr.text());//??????tr???
+                //??????td??????tr
+
+                var tds = tr.find("td");
+
+                tds.each(function(){
+                    var td = $(this);
+                    alert(td.text());//????td???
+
+                });
+                //});
+            });
+        });
+    </script>
+    <script>
+        /*$(document).ready(function(){
+            $('button[name = "item_delete"]').click(function(){
+                $.post("#",
+                        {
+                            name:"hello",
+                            city:"world"
+                        },
+                        function(data,status){
+                            alert("data:" + data + "\nstatus:" + status);
+                        });
+            });
+        });*/
+    </script>
+</head>
+
+
+
+<body>
+<center>
+
+    <table class="table table-striped">
+        <caption>orders</caption>
+        <thead>
+        <tr>
+            <th>user_id</th>
+            <th>username</th>
+            <th>gender</th>
+            <th>phone</th>
+            <th>email</th>
+            <th>address</th>
+            <th>delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>admin</td>
+            <td>name</td>
+            <td>male</td>
+            <td>phone</td>
+            <td>email</td>
+            <td>address</td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-primary " name="hello" value=admin>add</button>
+                    <button class="btn btn-primary " name="item_delete" value=admin>delete</button>
+                </div>
+            </td>
+        <tr>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>gender</td>
+            <td>phone</td>
+            <td>email</td>
+            <td>address</td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-primary " name="item_add" value=id>add</button>
+                    <button class="btn btn-primary " name="item_delete" value=id>delete</button>
+                </div>
+            </td>
+        <tr>
+        <tr>
+            <td>test</td>
+            <td>name</td>
+            <td>male</td>
+            <td>phone</td>
+            <td>email</td>
+            <td>address</td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-primary " name="item_add" value=test>add</button>
+                    <button class="btn btn-primary " name="item_delete" value=test>delete</button>
+                </div>
+            </td>
+        <tr>
+        <tr>
+            <td>test02</td>
+            <td>name</td>
+            <td>male</td>
+            <td>phone</td>
+            <td>email</td>
+            <td>address</td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-primary " name="item_add" value=test02>add</button>
+                    <button class="btn btn-primary " name="item_delete" value=test02>delete</button>
+                </div>
+            </td>
+        <tr>
+        <tr>
+            <td>test03</td>
+            <td>name</td>
+            <td>male</td>
+            <td>phone</td>
+            <td>email</td>
+            <td>address</td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-primary " name="item_add" value=test03>add</button>
+                    <button class="btn btn-primary " name="item_delete" value=test03>delete</button>
+                </div>
+            </td>
+        <tr>
+
+
+        </tbody>
+    </table>
+    <div style="padding: 0px 600px 10px;" align="center">
+        <form class="bs-example bs-example-form" role = "form" method="post">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon">Delete user</span>
+                <input type="text" class = "form-control" name="delete_user" placeholder="book's item_id" >
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" name="add">
+                        Delete
+                    </button>
+                </span>
+            </div>
+        </form>
+        <form class="bs-example bs-example-form" role = "form" method="post">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon">Delete book</span>
+                <input type="text" class = "form-control" name="delete_book" placeholder="book's item_id" >
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" name="delete">
+                        Delete
+                    </button>
+                </span>
+            </div>
+        </form>
+        <br>
+        <form method="post">
+            <div class="btn-group btn-group-lg">
+                <input type="submit" class="btn btn-primary " name="addorder" value="addorder">
+                <input type="submit" class="btn btn-primary " name="addbook" value="addbook">
+                <input type="submit" class="btn btn-primary " name="orders" value="orders">
+            </div>
+        </form>
+    </div>
+</center>
+</body>
+</html>
